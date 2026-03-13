@@ -1,0 +1,47 @@
+<div class="settings-page">
+  <h2>API Settings</h2>
+  <p class="hint">
+    Enter your <strong>WhatsApp Cloud API</strong> credentials from the
+    <a href="https://developers.facebook.com/apps" target="_blank" rel="noopener">Meta App Dashboard</a>.
+    Values are stored locally in your browser (localStorage).
+  </p>
+
+  <form class="settings-form" (ngSubmit)="save()">
+    <label>
+      Business Phone Number ID *
+      <input type="text" [(ngModel)]="config.phoneNumberId" name="phoneNumberId" required
+        placeholder="e.g. 123456789012345" />
+      <small>Found in <em>WhatsApp &rarr; API Setup</em> in your Meta app.</small>
+    </label>
+
+    <label>
+      System User Access Token *
+      <input type="password" [(ngModel)]="config.accessToken" name="accessToken" required
+        placeholder="EAA..." />
+      <small>
+        Generate a permanent token in
+        <em>Business Settings &rarr; System Users &rarr; Generate token</em>.
+        Required permissions: <code>whatsapp_business_messaging</code>,
+        <code>whatsapp_business_management</code>.
+      </small>
+    </label>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary"
+        [disabled]="!config.phoneNumberId || !config.accessToken">
+        Save Settings
+      </button>
+      <span class="saved-badge" *ngIf="saved">Saved!</span>
+    </div>
+  </form>
+
+  <div class="info-box">
+    <h4>How it works</h4>
+    <ul>
+      <li>Messages are sent via <code>POST https://graph.facebook.com/v23.0/{{ '{' }}PHONE_NUMBER_ID{{ '}' }}/messages</code></li>
+      <li>The <code>Authorization: Bearer TOKEN</code> header is added automatically.</li>
+      <li>Phone numbers are normalized to E.164 format (<code>+country code + number</code>).</li>
+      <li>Template variables like <code>&#36;{{ '{' }}contactName{{ '}' }}</code> are resolved per contact before sending.</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.contacts-page { padding: 1.5rem; }
+.page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.tag-filters { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.filter-label { font-size: .85rem; color: #666; }
+
+.contacts-table { width: 100%; border-collapse: collapse; }
+.contacts-table th, .contacts-table td { padding: .6rem .8rem; border-bottom: 1px solid #e5e5e5; text-align: left; }
+.contacts-table th { font-weight: 600; background: #f9f9f9; }
+.actions { display: flex; gap: .4rem; }
+
+.empty-state { color: #888; padding: 2rem 0; text-align: center; }
+
+.tag-chip { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: .78rem;
+  background: #e8f5e9; color: #2e7d32; margin: 2px; border: 1px solid #c8e6c9; cursor: default; }
+.tag-chip.active { background: #2e7d32; color: #fff; }
+button.tag-chip { cursor: pointer; }
+
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.4); display: flex;
+  align-items: center; justify-content: center; z-index: 100; }
+.modal { background: #fff; padding: 2rem; border-radius: 8px; width: 100%; max-width: 440px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.15); }
+.modal h3 { margin: 0 0 1.2rem; }
+.modal label { display: flex; flex-direction: column; gap: .3rem; margin-bottom: .9rem; font-size: .9rem; }
+.modal input { padding: .45rem .6rem; border: 1px solid #ccc; border-radius: 4px; font-size: .95rem; }
+.form-actions { display: flex; justify-content: flex-end; gap: .6rem; margin-top: 1rem; }
+
+.tag-input-row { display: flex; gap: .4rem; }
+.tag-list { display: flex; flex-wrap: wrap; margin-top: .4rem; }
+.tag-chip.removable button { background: none; border: none; cursor: pointer; margin-left: 4px;
+  font-size: .9rem; color: inherit; padding: 0; line-height: 1; }
+
+.btn { padding: .4rem .9rem; border-radius: 4px; border: 1px solid #ccc; cursor: pointer;
+  background: #fff; font-size: .88rem; }
+.btn:hover { background: #f0f0f0; }
+.btn-primary { background: #25d366; border-color: #25d366; color: #fff; }
+.btn-primary:hover { background: #1ebe5b; }
+.btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+.btn-danger { border-color: #e53935; color: #e53935; }
+.btn-danger:hover { background: #ffebee; }
+.btn-sm { padding: .25rem .6rem; font-size: .82rem; }
