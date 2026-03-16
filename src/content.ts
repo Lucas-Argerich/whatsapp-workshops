@@ -171,7 +171,7 @@ async function searchAndOpenContact(query: string): Promise<boolean> {
   if (!searchInput) return false;
 
   setSearchValue(searchInput, query);
-  await delay(700);
+  await delay(2000);
 
   const startedAt = Date.now();
   const resultSelectors = [
