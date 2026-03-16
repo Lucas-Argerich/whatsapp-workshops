@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg-0: #fbf6ef;
+  --bg-1: #f2e6d6;
+  --ink-1: #1f2a2e;
+  --ink-2: #324249;
+  --ink-3: #65757d;
+  --card: rgba(255, 255, 255, 0.78);
+  --line: rgba(30, 55, 67, 0.16);
+  --primary: #0f766e;
+  --primary-strong: #0a5d58;
+  --ok: #0f766e;
+  --err: #a43d2f;
+  --shadow: 0 8px 22px rgba(31, 42, 46, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 600px;
+  min-width: 600px;
+}
+
+body {
+  margin: 0;
+  color: var(--ink-1);
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(140px 140px at 12% 0%, rgba(15, 118, 110, 0.2), transparent 70%),
+    radial-gradient(180px 180px at 100% 20%, rgba(212, 153, 72, 0.22), transparent 72%),
+    linear-gradient(175deg, var(--bg-0), var(--bg-1));
+}
+
+.app {
+  width: 430px;
+  max-width: 100vw;
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.section {
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.hero {
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 4px;
+}
+
+h1,
+h2 {
+  margin: 0;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-2);
+}
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.status-pill {
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-pill.idle {
+  background: rgba(15, 118, 110, 0.12);
+  color: var(--primary-strong);
+}
+
+.status-pill.running {
+  background: rgba(212, 153, 72, 0.2);
+  color: #8a4c14;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.row.compact {
+  gap: 6px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.file-input-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--ink-2);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.file-input-wrap:hover {
+  border-color: rgba(15, 118, 110, 0.5);
+}
+
+.file-input-wrap input[type="file"] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.stat-box {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--ink-3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stat-value {
+  margin-top: 3px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.stat-value.small {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.import-status {
+  line-height: 1.35;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tag {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: var(--ink-2);
+  background: rgba(255, 255, 255, 0.82);
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.tag:hover {
+  border-color: rgba(15, 118, 110, 0.45);
+  transform: translateY(-1px);
+}
+
+.tag.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font: inherit;
+  color: var(--ink-1);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+textarea:focus,
+select:focus,
+button:focus,
+.tag:focus {
+  outline: 2px solid rgba(15, 118, 110, 0.35);
+  outline-offset: 1px;
+}
+
+button {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink-2);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.primary {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+button.primary:hover:not(:disabled) {
+  background: var(--primary-strong);
+  border-color: var(--primary-strong);
+}
+
+button.secondary {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+button:disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+}
+
+.muted {
+  font-size: 12px;
+  color: var(--ink-3);
+  line-height: 1.35;
+}
+
+.results-section {
+  padding-bottom: 8px;
+}
+
+.counter {
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.counter.active {
+  box-shadow: inset 0 0 0 1px rgba(31, 42, 46, 0.2);
+  transform: translateY(-1px);
+}
+
+.ok-counter {
+  background: rgba(15, 118, 110, 0.16);
+  color: var(--ok);
+  border-color: rgba(15, 118, 110, 0.28);
+}
+
+.err-counter {
+  background: rgba(164, 61, 47, 0.14);
+  color: var(--err);
+  border-color: rgba(164, 61, 47, 0.25);
+}
+
+.results {
+  max-height: 190px;
+  overflow: auto;
+  display: grid;
+  gap: 6px;
+  padding-right: 2px;
+}
+
+.result-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.result-row .badge {
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 2px 6px;
+}
+
+.result-row.ok .badge {
+  background: rgba(15, 118, 110, 0.16);
+  color: var(--ok);
+}
+
+.result-row.err .badge {
+  background: rgba(164, 61, 47, 0.16);
+  color: var(--err);
+}
+
+.result-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.result-error {
+  grid-column: 1 / -1;
+  font-size: 11px;
+  color: var(--err);
+  line-height: 1.3;
+}

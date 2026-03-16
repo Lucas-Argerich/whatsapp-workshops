@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Workshop Sender",
+  "version": "0.1.0",
+  "description": "Import XLSX contacts, filter by tags, and send personalized messages in WhatsApp Web.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "WhatsApp Workshop Sender",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
